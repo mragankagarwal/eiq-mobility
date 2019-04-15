@@ -1,0 +1,41 @@
+<!-- @author Mragank Agarwal -->
+<!doctype html>
+<html lang="en">
+<html>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--include Bootstrap library for CSS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Page Title -->
+  <title>eIQ Mobility - Assignment - Mragank Agarwal</title>
+</head>
+
+<body>
+
+  <!-- Headers to explain the utility of the application. -->
+  <h1 align="center">eIQ Mobility - Assignment - Mragank Agarwal</h1>
+  <h2 align="center">Upload a CSV and validate whether the file has 3 rows and 10 columns with complete data.</h2>
+
+  <!-- HTML form with method as POST and actions as '/validateCSV' -->
+  <form action="/validateCSV" method="post" enctype="multipart/form-data">
+    Choose the file:
+    <input align="center" type="file" name="csvFile" /><br>
+    <input align="center" type="submit" value="Upload" />
+  </form>
+
+  <!--Footer for the eIQ Mobility take home assignment-->
+  <footer align="center" position="absolute" bottom="0">
+    <span>Author: Mragank Agarwal</span><br />
+    <span>Organization: Carnegie Mellon University</span><br />
+    <span>Application hosted on: Google Cloud Platform</span><br />
+    <span>Contact information: <a href="mailto:mraganka@andrew.cmu.edu">mraganka@andrew.cmu.edu</a>.</span><br />
+    <br />
+  </footer>
+</body>
+
+</html>
