@@ -13,8 +13,8 @@ def fileUploadHome():
 def validate_view():
     # Constants as per the assignment specifications.
     EXTENSIONS = ['csv']
-    rowCount = 3
-    columnCount = 10
+    expectedRowCount = 10
+    expectedColumnCount = 3
 
     # Fetch the file from the request.
     file = request.files
@@ -35,17 +35,32 @@ def validate_view():
 
     # read the csv file by using the stream from io. Decoding set to UTF8.
     # csvInputStream is a StringIO Object.
-    csvInputStream = io.StringIO(file.stream.read().decode("UTF8"), newline=None)
+    csvInputStream = io.StringIO(file.stream.read().decode("UTF8"))
 
     # Get the csv Object from the StringIO object.
     csvInput = csv.reader(csvInputStream)
 
+    # Counter variables for csv validation
+    rowCounter = 0
+    columnCounter = 0
+
     # Print the data in the csv file to the terminal.
     for row in csvInput:
-        print(row)
+        rowCounter += 1
+        if rowCounter > expectedRowCount:
+            return "Failure! Number of rows is greater than " + str(expectedRowCount)
+        columnCounter = 0
+        for cell in row:
+            columnCounter += 1
+            if not cell:
+                return "Failure! Found a missing cell in row " + str(rowCounter) + " and column " + str(columnCounter)
+        if columnCounter != expectedColumnCount:
+            return "Failure! Number of columns is not equal to " + str(expectedColumnCount) + " in row number " + str(rowCounter)
+    if rowCounter != expectedRowCount:
+        return "Failure! Number of rows is not equal to " + str(expectedRowCount)
 
     # Return String 'Success'
-        return "Success!"
+    return "Success!"
 
 if __name__ == "__main__":
     # Whitelist the application to be hosted on any IP with port as 5001 and DEBUG mode on.

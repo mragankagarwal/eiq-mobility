@@ -19,17 +19,26 @@
 
   <!-- Headers to explain the utility of the application. -->
   <h1 align="center">eIQ Mobility - Assignment - Mragank Agarwal</h1>
-  <h2 align="center">Upload a CSV and validate whether the file has 3 rows and 10 columns with complete data.</h2>
+  <h3 align="center">Upload a CSV and validate whether the file has exactly 10 rows and 3 columns with data in each cell.</h3>
 
   <!-- HTML form with method as POST and actions as '/validateCSV' -->
-  <form action="/validateCSV" method="post" enctype="multipart/form-data">
-    Choose the file:
-    <input align="center" type="file" name="csvFile" /><br>
-    <input align="center" type="submit" value="Upload" />
-  </form>
+  <div class=col-md-12>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <form action="/validateCSV" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="csvFileUpload">Choose the File</label>
+          <input type="file" name="csvFile" class="form-control" id="csvFileUpload" aria-describedby="fileUploadHelp">
+          <small id="fileUploadHelp" class="form-text text-muted">Upload a CSV file to validate.</small>
+        </div>
+        <input class="btn btn-primary" align="center" type="submit" value="Upload" />
+      </form>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
 
   <!--Footer for the eIQ Mobility take home assignment-->
-  <footer align="center" position="absolute" bottom="0">
+  <footer align="center">
     <span>Author: Mragank Agarwal</span><br />
     <span>Organization: Carnegie Mellon University</span><br />
     <span>Application hosted on: Google Cloud Platform</span><br />
