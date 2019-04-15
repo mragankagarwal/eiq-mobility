@@ -45,7 +45,7 @@ def validate_view():
         print(row)
 
     # Return String 'Success'
-    return "Success!"
+        return "Success!"
 
 if __name__ == "__main__":
     # Whitelist the application to be hosted on any IP with port as 5001 and DEBUG mode on.
