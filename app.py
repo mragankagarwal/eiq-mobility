@@ -64,4 +64,4 @@ def validate_view():
 
 if __name__ == "__main__":
     # Whitelist the application to be hosted on any IP with port as 5001 and DEBUG mode on.
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    app.run(host='0.0.0.0', debug=True)
